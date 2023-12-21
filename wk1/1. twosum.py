@@ -18,3 +18,15 @@ def twoSum(nums, target: int) -> List[int]:
         if (target - nums[i]) in d and i != d[target - nums[i]]:
             return [i, d[target - nums[i]]]
     return [-1]
+
+
+# O(n) one pass solution
+def twoSum(nums, target: int) -> List[int]:
+    d = {}
+    for i in range(len(nums)):
+        compl = target - nums[i]
+        if compl in d:
+            return [i, d[compl]]
+        d[nums[i]] = i
+    return -1
+

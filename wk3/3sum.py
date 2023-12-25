@@ -1,7 +1,30 @@
 class Solution:
     def threeSum(self, nums):
-
-        return []
+        nums.sort()
+        res = []
+        for i in range(len(nums)):
+            lo, hi = 0, len(nums) - 1
+            while lo < hi:
+                sum = nums[lo] + nums[hi] + nums[i]
+                if lo == i:
+                    lo += 1
+                    continue
+                elif hi == i:
+                    hi -= 1
+                    continue
+                elif hi == 1:
+                    hi -= 1
+                elif sum == 0:
+                    if not sorted([nums[i], nums[hi], nums[lo]]) in res:
+                        res.append(sorted([nums[i], nums[hi], nums[lo]]))
+                    lo += 1
+                    hi -= 1
+                elif sum > 0:
+                    hi -= 1
+                else:
+                    lo += 1
+        return res
+        
         
 # naive solution: sort, then 
 

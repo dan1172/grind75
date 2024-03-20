@@ -1,7 +1,8 @@
 class MyQueue:
 
     def __init__(self):
-        
+        self.s1 = []
+        self.s2 = []
 
     def push(self, x: int) -> None:
         
@@ -22,3 +23,11 @@ class MyQueue:
 # param_2 = obj.pop()
 # param_3 = obj.peek()
 # param_4 = obj.empty()
+
+
+
+1 2 3
+
+s1: 3 2 1
+s2: 2 1
+

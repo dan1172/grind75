@@ -1,5 +1,5 @@
 class Solution:
-    def longestPalindrome(self, s: str) -> str:
+    def longestPalindrome(self, s):
         # we want the lognest palindromic substring
         
         # we have O(n^3) brute force solution that
@@ -11,4 +11,11 @@ class Solution:
         # key observations for recursion
             # we can see that you can easily build up the strings with one extra char and
             # be able to ensure if they're palindromes or ntot
-        return ""
+            
+        n = len(s)
+        stack = []
+        best = ""
+        for start in range(len(s)):
+            
+s = Solution
+print(s.longestPalindrome(None, "babad"))

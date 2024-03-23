@@ -8,19 +8,33 @@ class Node:
 from typing import Optional
 class Solution:
     def cloneGraph(self, node):
-       if node is None:
-           return node
+        if node is None:
+            return node
       
-       stack = []
-       visited = set()
+        stack = [node]
+        visited = set()
+        new_nodes = {}
        
-       first_node = Node(node.val, [i for i in node.neighbors])
 
-       while stack:
-           e = stack.pop()
-           if e in visited:
-               continue
+        while stack:
+            e = stack.pop()
+            if e.val in new_nodes:
+                new_e = new_nodes[e.val]
+            else:
+                new_e = Node(e.val, [])
+            
+
+           
+            if e not in visited:
+                visited.add(e)
+                for n in e.neighbors:
+                    if not n.val in new_nodes:
+                        new_nodes[n.val] = Node(n.val, [])
+                    new_e.neighbors.append(new_nodes[n.val])
+                    stack.append(n)
+    
+                   
            
            
        
-       return first_node
+        return new_nodes[1]

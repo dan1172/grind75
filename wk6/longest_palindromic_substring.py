@@ -17,5 +17,5 @@ class Solution:
         best = ""
         for start in range(len(s)):
             
-s = Solution
+s = Solution()
 print(s.longestPalindrome(None, "babad"))
